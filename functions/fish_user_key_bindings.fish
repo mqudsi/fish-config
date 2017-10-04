@@ -6,5 +6,5 @@ function fish_user_key_bindings
     bind \e\e\[3~ kill-word
     bind \e\cH backward-kill-word
     #bind alt+f4 to exit
-    bind [1\;3S exit
+    bind \e\[1\;3S exit
 end
