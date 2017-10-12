@@ -8,4 +8,6 @@ function fish_user_key_bindings
     #ctrl+home/end for beginning/end of commandline
     bind [1\;5H beginning-of-buffer
     bind [1\;5F end-of-buffer
+    #bind alt+f4 to exit
+    bind \e\[1\;3S exit
 end

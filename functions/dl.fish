@@ -1,3 +1,4 @@
-function dl
-	aria2c -x 8 --check-certificate=false --file-allocation=none $argv
+# Defined in - @ line 0
+function dl --description 'alias dl aria2c -j8 -x8 --min-split-size=4M --file-allocation=none'
+	aria2c -j8 -x8 --min-split-size=4M --file-allocation=trunc $argv;
 end
