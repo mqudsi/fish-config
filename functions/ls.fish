@@ -17,7 +17,8 @@ function ls --description 'alias ls=exa'
 			end
 			set -g argv $argv
 		end
-		exa $argv
+		# add -g always
+		exa -g $argv
 	else
 		eval (which ls) $argv
 	end
