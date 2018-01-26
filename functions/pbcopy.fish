@@ -1,5 +1,6 @@
 function pbcopy
-	if type -q lemonade; and string length -q $SSH_CLIENT
+	#lemonade does not understand IPv6!
+	if type -q lemonade; and string length -q $SSH_CLIENT; and not string match -rq ':' $SSH_CLIENT
 		set -l host (echo $SSH_CLIENT | cut -f1 -d ' ')
 		lemonade --host $host copy 2>/dev/null
 		return
