@@ -1,4 +1,9 @@
 function pbcopy
+	if type -q lemonade; and string length -q $SSH_CLIENT
+		set -l host (echo $SSH_CLIENT | cut -f1 -d ' ')
+		lemonade --host $host copy 2>/dev/null
+		return
+	end
 	set -l uname (uname -a)
 	if echo $uname | string match -qr -- "Microsoft"
 		clip.exe <&0 2>/dev/null
