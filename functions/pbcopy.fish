@@ -1,8 +1,10 @@
 function pbcopy
+	#pbcopy FILE can be used to copy contents of a file
 	if test (count $argv) -eq 2
 		cat $argv[2] | pbcopy
 		return $status
 	end
+
 	#lemonade does not understand IPv6!
 	if type -q lemonade; and string length -q $SSH_CLIENT; and not string match -rq ':' $SSH_CLIENT
 		set -l host (echo $SSH_CLIENT | cut -f1 -d ' ')
