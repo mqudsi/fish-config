@@ -1,5 +1,5 @@
 function pbcopy
-	if test count $argv -eq 2
+	if test (count $argv) -eq 2
 		cat $argv[2] | pbcopy
 		return $status
 	end

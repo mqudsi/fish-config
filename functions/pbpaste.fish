@@ -1,5 +1,5 @@
 function pbpaste
-	if test count $argv -eq 2
+	if test (count $argv) -eq 2
 		pbpaste > $argv[2]
 	end
 	#lemonade does not understand IPv6!
