@@ -1,1 +1,1 @@
-/home/mqudsi/go/src/github.com/junegunn/fzf/shell/key-bindings.fish
+source $GOPATH/src/github.com/junegunn/fzf/shell/key-bindings.fish
