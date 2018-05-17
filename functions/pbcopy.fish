@@ -1,7 +1,7 @@
 function pbcopy
 	#pbcopy FILE can be used to copy contents of a file
-	if test (count $argv) -eq 2
-		cat $argv[2] | pbcopy
+	if set -q argv[1]
+		cat $argv[1] | pbcopy
 		return $status
 	end
 

@@ -1,7 +1,7 @@
 function pbpaste
 	#pbpaste FILE can be used to paste to a file
-	if test (count $argv) -eq 2
-		pbpaste > $argv[2]
+	if set -q argv[1]
+		pbpaste > $argv[1]
 		return $status
 	end
 
