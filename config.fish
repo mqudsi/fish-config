@@ -12,4 +12,5 @@ if type -q fd
 	# These commands are eval'd, so if we escape $dir it will be replaced with the new value
 	set FZF_CTRL_T_COMMAND "fd -t d -t f -t l '^' \$dir --follow --color=always"
 	set FZF_ALT_C_COMMAND "fd -t d '^' \$dir --follow --color=always"
+	set FZF_DEFAULT_OPTS "--ansi" # to support `fd --color`
 end
