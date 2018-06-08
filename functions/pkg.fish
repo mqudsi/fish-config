@@ -10,6 +10,6 @@ else if uname -a | string match -qr "Darwin"
 	end
 else
 	function pkg --wraps pkg
-		pkg $argv
+		command pkg $argv
 	end
 end
