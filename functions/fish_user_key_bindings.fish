@@ -10,4 +10,8 @@ function fish_user_key_bindings
     bind \e\[1\;5F end-of-buffer
     #bind alt+f4 to exit
     bind \e\[1\;3S exit
+    #bind alt+del to kill-word
+    bind \e\[3\;3~ kill-word
+    #bind ctrl+del to kil-word
+    bind \e\[3\;5~ kill-word
 end
