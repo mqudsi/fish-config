@@ -14,3 +14,6 @@ if type -q fd
 	set FZF_ALT_C_COMMAND "fd -t d '^' \$dir --follow --color=always"
 	set FZF_DEFAULT_OPTS "--ansi" # to support `fd --color`
 end
+
+# disable colored background for ls output to make it look OK in dark terminals
+set -x LS_COLORS 'tw=*;41:ow=*;42:'
