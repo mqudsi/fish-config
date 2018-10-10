@@ -7,7 +7,7 @@ else if uname -a | string match -qr "Darwin"
 		brew $argv
 	end
 else
-	function pkg --wraps pkg
+	function pkg
 		command pkg $argv
 	end
 end
