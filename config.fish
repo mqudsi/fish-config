@@ -21,3 +21,6 @@ end
 
 # disable colored background for ls output to make it look OK in dark terminals
 set -x LS_COLORS 'tw=*;41:ow=*;42:'
+
+# work around slow ^C
+bind \cc 'commandline ""'
