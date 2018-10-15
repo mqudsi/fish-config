@@ -22,5 +22,7 @@ end
 # disable colored background for ls output to make it look OK in dark terminals
 set -x LS_COLORS 'tw=*;41:ow=*;42:'
 
-# work around slow ^C
-bind \cc 'commandline ""'
+# work around slow ^C, making sure to close pager
+# https://github.com/fish-shell/fish-shell/issues/5259
+# https://github.com/fish-shell/fish-shell/commit/c02bf2548f6e4cc6283a6716006705c6353bd41d
+bind \cc 'commandline -f cancel; commandline ""'
