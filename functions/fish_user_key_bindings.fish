@@ -13,4 +13,8 @@ function fish_user_key_bindings
     bind \e\[3\;3~ kill-word
     #bind ctrl+del to kil-word
     bind \e\[3\;5~ kill-word
+
+    # repeat the last argument in the current command, useful for doing this like
+    # cp /long/path/to/a/file /long/path/to/a/file.bak
+    bind \er repeat_last_argument
 end
