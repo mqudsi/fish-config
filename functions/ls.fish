@@ -1,11 +1,15 @@
 # cache the result of this operation so we don't call
 # `uname` each time we execute the function below
 set -l flag
-if command ls --color=auto /tmp 1>/dev/null 2>/dev/null
-	set flag --color=auto
+if command ls --color=auto -G /tmp 1>/dev/null 2>/dev/null
+	# FreeBSD
+	set flag -G --color=auto
 else if command ls -G /tmp 1>/dev/null 2>/dev/null
-	# macOS and FreeBSD
+	# Linux
 	set flag -G
+else if command ls --color=auto /tmp 1>/dev/null 2>/dev/null
+	# macOS
+	set flag --color=auto
 end
 
 # recent versions of coreutils broke `ls`. Nope, not kidding.
