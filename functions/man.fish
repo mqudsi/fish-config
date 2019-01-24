@@ -7,6 +7,7 @@ function man --description "an nvim wrapper for man"
 
 	if type -q nvim
 		nvim -u NORC -c ":set fileignorecase" -c ":Man $arg" -c ":silent :only" \
+			-c ':set mouse=a' \
 			-c 'nunmap <buffer> q' -c 'nmap q :q!<CR>' -c 'nmap <space> <PageDown>' \
 			-c ':call feedkeys("gg")'
 	else
