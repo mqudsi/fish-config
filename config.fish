@@ -26,3 +26,12 @@ set -x LS_COLORS 'tw=*;41:ow=*;42:'
 # https://github.com/fish-shell/fish-shell/issues/5259
 # https://github.com/fish-shell/fish-shell/commit/c02bf2548f6e4cc6283a6716006705c6353bd41d
 bind \cc 'commandline -f cancel; commandline ""'
+
+# Map ctrl-n to launch a new terminal window; useful for terminals that don't
+# do so by default. This should work anywhere `open` exists.
+if type -q open
+	bind \cN 'open fish'
+end
+
+# Stop posting junk to the terminal when INS is pressed
+bind -k ic true
