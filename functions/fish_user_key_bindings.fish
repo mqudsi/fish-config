@@ -10,7 +10,7 @@ function fish_user_key_bindings
     # Note: macOS doesn't support distinct alt+del
     bind \e\[3\;3~ kill-word
     # bind ctrl+del to kill big words
-    bind \e\[3\;5~ kill-big-word
+    bind \e\[3\;5~ kill-bigword
 
     # ctrl+home/end for beginning/end of commandline
     bind \e\[1\;5H beginning-of-buffer
