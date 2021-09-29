@@ -1,5 +1,5 @@
 function pbpaste
-	#pbpaste FILE can be used to paste to a file
+	# pbpaste FILE can be used to paste to a file
 	if set -q argv[1]
 		pbpaste > $argv[1]
 		return $status
