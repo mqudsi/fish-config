@@ -5,7 +5,7 @@ function pbedit
 	pbpaste $pbtemp
 	# Create a backup of the old pasteboard contents
 	cp $pbtemp $TMPDIR/.prevpb
-	nvim $pbtemp
+	nvim $pbtemp -c ":e ++enc=utf-8"
 	and cat $pbtemp | pbcopy
 	and rm $pbtemp # only if we succeeded above
 end
