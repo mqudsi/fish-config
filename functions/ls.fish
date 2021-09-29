@@ -15,7 +15,8 @@ end
 # recent versions of coreutils broke `ls`. Nope, not kidding.
 # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=886173
 if command ls --quoting-style=literal /tmp >/dev/null 2>/dev/null
-	set flag $flag --quoting-style=literal
+	# also add natural number sort
+	set flag $flag -v --quoting-style=literal
 end
 
 function ls --wraps ls --inherit-variable flag
