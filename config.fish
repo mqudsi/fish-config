@@ -33,3 +33,5 @@ end
 
 # Stop posting junk to the terminal when INS is pressed
 bind -k ic true
+
+set -g MOVFLAGS -movflags +write_colr+use_metadata_tags+frag_keyframe+empty_moov+default_base_moof+faststart -frag_duration 1000000
