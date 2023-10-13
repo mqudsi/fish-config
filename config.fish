@@ -19,8 +19,11 @@ end
 
 # disable colored background for ls output to make it look OK in dark terminals
 set -x LS_COLORS 'tw=*;41:ow=*;42:'
+# Set flags used by BSD ls to determine if colors are shown at the tty (since we are in active mode)
+set -x COLORTERM
+set -x CLICOLOR
 
-# work around slow ^C, making sure to close pager
+# Work around slow ^C, making sure to close pager
 # https://github.com/fish-shell/fish-shell/issues/5259
 # https://github.com/fish-shell/fish-shell/commit/c02bf2548f6e4cc6283a6716006705c6353bd41d
 bind \cc 'commandline -f cancel; commandline ""'
