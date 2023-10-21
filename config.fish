@@ -37,4 +37,10 @@ end
 # Stop posting junk to the terminal when INS is pressed
 bind -k ic true
 
+if type -q git.exe
+	function git.exe --wraps git
+		command git.exe $argv
+	end
+end
+
 set -g MOVFLAGS -movflags +write_colr+use_metadata_tags+frag_keyframe+empty_moov+default_base_moof+faststart -frag_duration 1000000
