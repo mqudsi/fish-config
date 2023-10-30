@@ -1,9 +1,13 @@
-if not command -q open.exe
-	return 1
-end
-
-function open
-	for target in $argv
-		open.exe  $target
+if command -q open
+	function open
+		for target in $argv
+			command open $target
+		end
+	end
+else if command -q open.exe
+	function open
+		for target in $argv
+			command open.exe $target
+		end
 	end
 end
