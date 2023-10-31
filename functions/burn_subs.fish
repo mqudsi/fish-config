@@ -29,7 +29,7 @@ function burn_subs
 	if set -q argv[2]
 		set out $argv[2]
 	end
-	set cmd ffmpeg -hide_banner -i $src -vf subtitles=$subs:force_style=\'Fontname=Roboto,Fontsize=$size\,Outline=$outline\,MarginV=30\' -c:a copy -sn -c:v h264_nvenc $out
+	set cmd ffmpeg -hide_banner -i $src -vf subtitles=$subs:force_style=\'Fontname=Roboto\ Regular,Fontsize=$size\,Outline=$outline\,MarginV=30\' -c:a copy -sn -c:v h264 $out
 	for word in $cmd
 		if ! test "$word" = "-hide_banner"
 			printf "%s " (echo $word | string escape)
