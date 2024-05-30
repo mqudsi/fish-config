@@ -2,10 +2,8 @@ if not status --is-interactive
 	exit
 end
 
-if type -q zoxide
-	zoxide init fish | source
-	alias j z
-end
+# Abuse __fish_cache_sourced_completions to speed up zoxide init
+__fish_cache_sourced_completions zoxide init fish; and alias j z
 
 if type -q fd
 	# set FZF_CTRL_T_COMMAND "rg --files --no-ignore --hidden --follow -g '!{.git,node_modules}/*'"
