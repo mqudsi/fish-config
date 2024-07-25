@@ -13,8 +13,9 @@ function pbcopy
 	if type -q lemonade; and string length -q $SSH_CLIENT; and not string match -rq ':' $SSH_CLIENT
 		set -l host (echo $SSH_CLIENT | cut -f1 -d ' ')
 		lemonade --host $host copy 2>/dev/null
-	else if echo $__uname_a | string match -qr -- "Microsoft"
-		clip.exe <&0 2>/dev/null
+	else if echo $__uname_a | string match -iqr -- "Microsoft"
+		# This only works if we use UTF16 (with the BOM) and not if we use UTF16LE (no BOM)
+		iconv -f UTF8 -t UTF16 <&0 | clip.exe 2>/dev/null
 	else if echo $__uname_a | string match -qr -- "Darwin"
 		command pbcopy <&0 2>/dev/null
 	else if type -q xclip

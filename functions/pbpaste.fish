@@ -19,7 +19,7 @@ function pbpaste
 		else
 			echo $text
 		end
-	else if echo $__uname_a | string match -qr -- "Microsoft"
+	else if echo $__uname_a | string match -iqr -- "Microsoft"
 		paste.exe --lf <&0 2>/dev/null
 	else if echo $__uname_a | string match -qr -- "Darwin"
 		command pbpaste <&0 2>/dev/null
